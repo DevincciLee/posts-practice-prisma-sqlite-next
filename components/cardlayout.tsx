@@ -1,4 +1,5 @@
-import { Card, CardContent, CardHeader } from "./ui/card";
+import { Button } from "./ui/button";
+import { Card, CardContent, CardFooter, CardHeader } from "./ui/card";
 import { Label } from "./ui/label";
 import Link from "next/link";
 
@@ -6,6 +7,7 @@ interface CardLayoutProps {
   id: string;
   title: string;
   content: string;
+  postedBy: string;
 }
 
 interface CardLayoutComponentProps {
@@ -22,8 +24,13 @@ const truncateText = (text: string) => {
 export default function CardLayout({ cards }: CardLayoutComponentProps) {
   if (!cards || cards.length === 0) {
     return (
-      <div className="w-full h-full flex items-center justify-center">
-        No cards available
+      <div className="w-full h-full flex items-center justify-center pt-8">
+        <Label className="text-xl flex items-center flex-col gap-4">
+          No posts available yet....{" "}
+          <Button variant={"outline"}>
+            <Link href="/create-post">Create a post</Link>
+          </Button>
+        </Label>
       </div>
     );
   }
@@ -34,7 +41,7 @@ export default function CardLayout({ cards }: CardLayoutComponentProps) {
         {cards.map((card) => (
           <Card
             key={card.id}
-            className="min-h-[200px] transition-transform hover:scale-[1.02] flex flex-col"
+            className="max-h-[250px] transition-transform hover:scale-[1.02] flex flex-col"
           >
             <CardHeader className="w-full text-center">
               <h2 className="text-lg font-semibold">{card.title}</h2>
@@ -53,6 +60,9 @@ export default function CardLayout({ cards }: CardLayoutComponentProps) {
                   </Link>
                 )}
               </Label>
+              <CardFooter className="flex justify-center items-center text-gray-400 pt-8">
+                <Label>Posted by: {card.postedBy}</Label>
+              </CardFooter>
             </CardContent>
           </Card>
         ))}
