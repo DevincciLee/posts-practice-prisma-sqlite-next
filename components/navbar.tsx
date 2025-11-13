@@ -31,7 +31,7 @@ export default function Navbar() {
 
   if (!isLoaded || !isSignedIn) {
     return (
-      <nav className="sticky top-0 max-w-screen w-full h-18 bg-white/30 backdrop-blur-none shadow flex justify-around items-center z-50 text-black">
+      <nav className="sticky top-0 max-w-screen w-full h-18 bg-white shadow flex justify-around items-center text-black">
         <Link href="/" className="hover:text-green-600">
           <Label className="text-xl font-extrabold uppercase">
             Post Template
