@@ -23,7 +23,7 @@ export default async function Home() {
       </div>
       <main
         className={`w-full h-full ${
-          posts.length === 0 ? "pt-4" : "flex justify-center items-center"
+          posts.length === 0 ? "" : "flex justify-center items-center"
         }`}
       >
         <CardLayout cards={posts}></CardLayout>

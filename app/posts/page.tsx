@@ -23,7 +23,7 @@ export default async function UserPosts() {
   }
 
   const user = await currentUser();
-  const posts = await prisma.post.findMany({
+  const userPosts = await prisma.post.findMany({
     where: {
       postedBy: user?.fullName || "",
     },
@@ -43,10 +43,10 @@ export default async function UserPosts() {
       </div>
       <main
         className={`w-full h-full ${
-          posts.length === 0 ? "pt-4" : "flex justify-center items-center"
+          userPosts.length === 0 ? "pt-4" : "flex justify-center items-center"
         }`}
       >
-        <CardLayout cards={posts}></CardLayout>
+        <CardLayout cards={userPosts}></CardLayout>
       </main>
     </div>
   );
