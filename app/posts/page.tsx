@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { prisma } from "@/lib/prisma";
 import { auth, currentUser } from "@clerk/nextjs/server";
+import { PlusCircleIcon } from "lucide-react";
 import Link from "next/link";
 
 export default async function UserPosts() {
@@ -29,7 +30,17 @@ export default async function UserPosts() {
   });
 
   return (
-    <div className="h-screen w-screen">
+    <div className="h-screen w-screen flex flex-col justify-center gap-6">
+      <div className="flex flex-row justify-between items-center md:px-6 pl-5">
+        <Label className="md:text-2xl text-lg font-extrabold pt-6 uppercase ">
+          Your Posts
+        </Label>
+        <Button variant="ghost" className="mt-6 h-8">
+          <Link href={"/create-post"}>
+            <PlusCircleIcon></PlusCircleIcon>
+          </Link>
+        </Button>
+      </div>
       <main
         className={`w-full h-full ${
           posts.length === 0 ? "pt-4" : "flex justify-center items-center"

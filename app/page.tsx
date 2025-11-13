@@ -11,7 +11,7 @@ export default async function Home() {
 
   return (
     <div className="h-screen w-screen flex flex-col justify-center gap-6">
-      <div className="flex flex-row justify-between items-center px-6">
+      <div className="flex flex-row justify-between items-center md:px-6 pl-5">
         <Label className="md:text-2xl text-lg font-extrabold pt-6 uppercase ">
           All Posts
         </Label>
