@@ -1,7 +1,6 @@
 import CardLayout from "@/components/cardlayout";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Popover, PopoverTrigger } from "@/components/ui/popover";
 import { prisma } from "@/lib/prisma";
 import { PlusCircleIcon } from "lucide-react";
 import Link from "next/link";

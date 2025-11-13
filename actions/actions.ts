@@ -1,6 +1,7 @@
 "use server";
 
 import prisma from "@/lib/prisma";
+import { revalidatePath } from "next/cache";
 
 export async function createPost(formData: FormData) {
   await prisma.post.create({
@@ -10,4 +11,8 @@ export async function createPost(formData: FormData) {
       postedBy: formData.get("postedBy") as string,
     },
   });
+
+  // Revalidate pages to refresh the database cache
+  revalidatePath("/");
+  revalidatePath("/posts");
 }
