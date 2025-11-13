@@ -27,7 +27,6 @@ export default function Navbar() {
   const navLinks = [
     { id: 1, title: "Home", link: "/" },
     { id: 2, title: "My Posts", link: "/posts" },
-    { id: 3, title: "Create a Post", link: "/create-post" },
   ];
 
   if (!isLoaded || !isSignedIn) {
@@ -66,7 +65,7 @@ export default function Navbar() {
         <div className="flex items-center md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant={"outline"}>
+              <Button variant="default">
                 <Menu></Menu>
               </Button>
             </SheetTrigger>
@@ -82,7 +81,11 @@ export default function Navbar() {
               </SheetHeader>
               <div className="flex flex-col px-4 gap-5 text-black md:hidden">
                 {navLinks.map((nav) => (
-                  <Link key={nav.id} href={nav.link} className="border-b">
+                  <Link
+                    key={nav.id}
+                    href={nav.link}
+                    className="border-b w-full"
+                  >
                     <Label className="text-md font-extrabold uppercase pb-6">
                       {nav.title}
                     </Label>

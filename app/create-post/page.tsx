@@ -43,7 +43,7 @@ export default function CreatePost() {
   };
 
   return (
-    <div className="h-full w-screen flex justify-center items-center">
+    <div className="h-full md:pt-[13vh] pt-8 w-screen flex justify-center items-center">
       <form action={createPost} className="flex flex-col gap-4">
         <div className="flex flex-col gap-4">
           <Label
