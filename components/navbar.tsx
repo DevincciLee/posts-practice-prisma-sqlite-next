@@ -31,7 +31,7 @@ export default function Navbar() {
 
   if (!isLoaded || !isSignedIn) {
     return (
-      <nav className="sticky top-0 max-w-screen z-99 w-full h-18 bg-white shadow flex justify-around items-center text-black">
+      <nav className="sticky top-0 max-w-screen z-49 w-full h-18 bg-white shadow flex justify-around items-center text-black">
         <Link href="/" className="hover:text-green-600">
           <Label className="text-xl font-extrabold uppercase">
             Post Template
@@ -62,10 +62,10 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Navigation*/}
-        <div className="flex items-center md:hidden">
+        <div className="flex items-center md:hidden z-50">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="default">
+              <Button variant="ghost">
                 <Menu></Menu>
               </Button>
             </SheetTrigger>

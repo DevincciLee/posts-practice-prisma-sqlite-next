@@ -37,7 +37,7 @@ export default function CardLayout({ cards }: CardLayoutComponentProps) {
 
   return (
     <div className="w-full h-full p-4">
-      <main className="w-full h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <main className="w-full h-full grid grid-cols-1 md:grid-rows-3 lg:grid-rows-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {cards.map((card) => (
           <Card
             key={card.id}
