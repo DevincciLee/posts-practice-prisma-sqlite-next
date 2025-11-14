@@ -38,10 +38,10 @@ export default function CreatePost() {
           error: "Error",
         }
       );
-      setTimeout(redirect("/"), 3000);
     } else {
       toast.error("Error saving to database.");
     }
+    setTimeout(redirect("/"), 3000);
   };
 
   return (
