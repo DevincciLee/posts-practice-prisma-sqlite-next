@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { SignedIn, useUser } from "@clerk/nextjs";
+import { redirect } from "next/navigation";
 import { useRef, useState } from "react";
 import { toast } from "sonner";
 
@@ -37,6 +38,7 @@ export default function CreatePost() {
           error: "Error",
         }
       );
+      setTimeout(redirect("/"), 3000);
     } else {
       toast.error("Error saving to database.");
     }
